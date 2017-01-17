@@ -29,7 +29,13 @@ Test report will be available at http://localhost:8000.
 
 ## More images!
 
+### Detailed test report
+
 ![Detailed test report](images/detailed.png)
+
+### Test log
+
+![Test log](images/log.png)
 
 ## License
 
