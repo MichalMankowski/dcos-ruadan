@@ -23,11 +23,12 @@ ENV CLUSTER_SIZE=3
 RUN apt-get update
 RUN apt-get install -y python-pip
 RUN pip install robotframework requests
-RUN mkdir /opt/dcos-sanity-tests
+RUN mkdir /opt/ruadan
 
-COPY libs /opt/dcos-sanity-tests/libs
-COPY *.robot /opt/dcos-sanity-tests/
-COPY entrypoint.sh /opt/dcos-sanity-tests/entrypoint.sh
+COPY libs /opt/ruadan/libs
+COPY *.robot /opt/ruadan/
+COPY entrypoint.sh /opt/ruadan/entrypoint.sh
+COPY report.html /report.html
 
 EXPOSE 8000
-ENTRYPOINT /opt/dcos-sanity-tests/entrypoint.sh
+ENTRYPOINT /opt/ruadan/entrypoint.sh

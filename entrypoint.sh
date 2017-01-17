@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-robot --variable MARATHON_ADDRESS:$MARATHON_ADDRESS --variable EXHIBITOR_ADDRESS:$EXHIBITOR_ADDRESS --variable DCOS_ADDRESS:$DCOS_ADDRESS --variable CLUSTER_SIZE:$CLUSTER_SIZE /opt/dcos-sanity-tests/*.robot
+ln -s /report.html /index.html
+robot --variable MARATHON_ADDRESS:$MARATHON_ADDRESS --variable EXHIBITOR_ADDRESS:$EXHIBITOR_ADDRESS --variable DCOS_ADDRESS:$DCOS_ADDRESS --variable CLUSTER_SIZE:$CLUSTER_SIZE /opt/ruadan/*.robot &
 cd /
-cp report.html index.html
 python -m SimpleHTTPServer

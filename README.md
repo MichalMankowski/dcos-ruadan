@@ -27,6 +27,60 @@ Test report will be available at http://localhost:8000.
 * `DCOS_ADDRESS` - Hostname or IP address of the DC/OS instance (or load balancer).
 * `CLUSTER_SIZE` - Size of the Mesos cluster.
 
+## Example Marathon service definition
+
+```
+{
+  "id": "ruadan",
+  "cmd": null,
+  "cpus": 0.5,
+  "mem": 128,
+  "disk": 0,
+  "instances": 1,
+  "executor": null,
+  "fetch": null,
+  "constraints": null,
+  "acceptedResourceRoles": null,
+  "user": null,
+  "container": {
+    "docker": {
+      "image": "kamsz/ruadan",
+      "forcePullImage": false,
+      "privileged": false,
+      "portMappings": [
+        {
+          "containerPort": 8000,
+          "protocol": "tcp",
+          "name": "ruadan",
+          "servicePort": 8000,
+          "labels": {
+            "VIP_0": "ruadan:8000"
+          },
+          "hostPort": 0
+        }
+      ],
+      "network": "USER"
+    }
+  },
+  "labels": null,
+  "healthChecks": [
+    {
+      "protocol": "TCP",
+      "port": 8000
+    }
+  ],
+  "env": {
+    "EXHIBITOR_ADDRESS": "192.168.1.2",
+    "MARATHON_ADDRESS": "192.168.1.2",
+    "DCOS_ADDRESS": "192.168.1.2",
+    "CLUSTER_SIZE": "3"
+  },
+  "ipAddress": {
+    "networkName": "dcos"
+  }
+}
+```
+
 ## More images!
 
 ### Detailed test report

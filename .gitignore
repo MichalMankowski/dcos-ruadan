@@ -1,3 +1,4 @@
 *.html
+!report.html
 *.xml
 *.pyc
