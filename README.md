@@ -1,5 +1,7 @@
 # Ruadan
 
+![Ruadan](images/ruadan_logo3.png)
+
 Ruadan is a set of automated DC/OS sanity tests.
 
 ![Test report](images/main.png)
