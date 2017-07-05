@@ -45,6 +45,7 @@ Test report will be available at http://localhost:8000.
   "acceptedResourceRoles": null,
   "user": null,
   "container": {
+  "type": "DOCKER",
     "docker": {
       "image": "kamsz/ruadan",
       "forcePullImage": false,
